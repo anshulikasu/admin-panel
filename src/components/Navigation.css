@@ -1,4 +1,10 @@
 .sidebar-left {
-  flex: 0.2;
-  background-color: pink;
+  flex: 0.17;
+  background-color:#263144;
+  height: 50%;
+  color: white;
+}
+
+.wow-icon{
+  color: rgb(0, 136, 255);
 }

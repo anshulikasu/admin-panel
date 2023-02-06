@@ -1,0 +1,89 @@
+
+.base-table{
+  width: 100%;
+}
+.main-table{
+ width: 100%;
+ flex-direction: column;
+
+ 
+}
+.table-headerrow{
+  background-color: rgb(17, 17, 26);
+  color: white;
+  font-size: 12px;
+  width: 100%;
+  margin: 5%;
+ 
+  
+}
+
+.table-header{
+text-align: center;
+box-shadow: beige;
+
+
+}
+
+.table-hd{
+ margin: 5px;
+}
+
+.table-body{
+  margin: 5%;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+
+.calendar-d{
+
+  align-items: flex-end;
+  text-align: right;
+  margin-right: 5px;
+  /* float: left; */
+ 
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+
+}
+/* 
+/* .rdrDateRangePickerWrapper */
+input.inputBox{
+  font-size: 22px;
+  padding: 5px 8px 4px 8px;
+  border-radius: 3px;
+  border: 1px solid;
+
+}
+
+.calendarWrap{
+  display: inline-block;
+  position: relative;
+}
+
+.calendarElement{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+  z-index: 999;
+}
+.rdrDateRangePickerWrapper{
+  position: absolute;
+  left: 74%;
+  transform: translateX(-55%);
+  top: 213px;
+  z-index: 999;
+}
+.button-cl{
+  border: 0.8px solid white;
+  color: white;
+  background-color: transparent;
+  text-align: left;
+  font-size: 12px;
+  box-shadow: none;
+  height: 30px;
+}
+

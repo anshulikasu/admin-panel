@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import Navigation from "./components/Navigation";
-
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import Rightpage from "./components/Rightpage";
 
 function App() {

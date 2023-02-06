@@ -1,6 +1,41 @@
-.right-nav{
-  display: flex;
+.card-one{
   flex: 0.8;
-  height: 30%;
-  background-color: brown;
+  /* height: 25%; */
+margin: 10px;
+  flex-direction: column;
+  background-color: rgb(39, 35, 35);
+}
+/* .card-one{
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  background-color: rgb(41, 39, 39);
+} */
+
+.cardcontent-one{
+  display: flex;
+  color: white;
+  
+  justify-content: space-evenly;
+  background-color:#263144
+  ;
+}
+
+.typo-one{
+   font-size: 13px !important;
+}
+
+.typo-two{
+  font-size: 13px !important;
+}
+
+.cardcontent-two{
+  display: flex;
+  color: white;
+  justify-content:space-evenly;
+  background-color:#263144
+  ;
+}
+.typo-subone{
+  text-align: center;
 }
