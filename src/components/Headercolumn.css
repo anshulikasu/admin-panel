@@ -38,7 +38,7 @@ box-shadow: beige;
 
 .calendar-d{
 
-  align-items: flex-end;
+  /* align-items: flex-end; */
   text-align: right;
   margin-right: 5px;
   /* float: left; */
@@ -81,9 +81,32 @@ input.inputBox{
   border: 0.8px solid white;
   color: white;
   background-color: transparent;
-  text-align: left;
+  /* text-align: left; */
   font-size: 12px;
   box-shadow: none;
   height: 30px;
 }
 
+.button{
+ text-align: left; 
+ display: flex;
+ color: white;
+ font-size: 12px;
+ align-items: center;
+}
+
+.nav-pnl{
+  justify-content: space-between;
+  display: flex;
+ 
+}
+
+.button-sub{
+  border: 0.8px solid white;
+  color: white;
+  width: 25px;
+  background-color: transparent;
+  font-size: 12px;
+  box-shadow: none;
+  height: 30px;
+}

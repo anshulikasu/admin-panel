@@ -16,6 +16,7 @@ const HeaderColumn = () => {
   const [endDate, setEndDate] = useState(new Date());
   const [currentPage, setCurrentPage] = useState();
   const [showDatePicker, setDatePicker] = useState(false);
+  const [limit, setLimit] = useState();
 
   useEffect(() => {
     setLoading(true);
@@ -40,13 +41,25 @@ const HeaderColumn = () => {
       });
   }, []);
 
+  const handleChange = (event) => {
+    setLimit(event.target.value);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const dataFlow = await fetchComments({ limit });
+      setData(dataFlow);
+    };
+    fetchData();
+  }, [limit]);
+
   const fetchComments = async ({ startDate, endDate, currentPage }) => {
     // console.log("fetch comments");
     const URL_CONST = `https://admindevapi.wowtalent.live/api/admin/dashboard/installstatasticlist?${
       startDate ? `fromdate=${startDate}` : "fromdate=2022-04-01"
     }${endDate ? `&todate=${endDate}` : "&todate=2022-08-24"}&page=${
       currentPage ? currentPage : "1"
-    }&limit=20`;
+    }&limit=${limit ? limit : "20"}`;
     console.log(URL_CONST);
     const res = await fetch(
       URL_CONST
@@ -103,21 +116,48 @@ const HeaderColumn = () => {
     endDate: endDate,
     key: "selection",
   };
+  // const handleChange = async (event) => {
+  //   console.log(event.target);
+  //   setLimit(event.target.value);
+  //   const dataFlow = await fetchComments({
+  //     limit,
+  //   });
+  //   setData(dataFlow);
+
+  //   console.log("value is:", event.target.value);
+  // };
 
   return (
     <div>
-      <div className="calendar-d">
-        <button
-          className="button-cl"
-          onClick={() => setDatePicker(!showDatePicker)}
-        >
-          {showDatePicker ? "Hide Calendar" : "Show Calendar"}
-        </button>
-        {showDatePicker && (
-          <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
-        )}
-      </div>
+      <div className="nav-pnl">
+        <div className="button">
+          <span>Show</span>
+          <input
+            className="button-sub"
+            type="text"
+            id="message"
+            name="message"
+            onChange={handleChange}
+            value={limit}
+            autoComplete="off"
+          />
+        </div>
 
+        <div className="calendar-d">
+          <button
+            className="button-cl"
+            onClick={() => setDatePicker(!showDatePicker)}
+          >
+            {showDatePicker ? "Hide Calendar" : "Show Calendar"}
+          </button>
+          {showDatePicker && (
+            <DateRangePicker
+              ranges={[selectionRange]}
+              onChange={handleSelect}
+            />
+          )}
+        </div>
+      </div>
       <div className="main-table">
         <table className="base-table">
           <thead className="table-header">
